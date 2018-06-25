@@ -1,0 +1,55 @@
+﻿@model FunTour.Models.TravelPackageViewModel
+
+@{
+    ViewBag.Title = "AddDataServicesToTravel";
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('AddDataServicesToTravelReturn').click(function () {
+            var _packageId = $('#Id_TravelPackage').val();
+
+            var _parameters = { TravelPackageId: _packageId };
+            $.ajax({
+                url: "/TravelPackages/AddDataServicesToTravelReturn",
+                type: "GET",
+                data: _parameters
+                //success:
+                    //function (data, textStatus, jqXHR) {
+                    //$('#PermissionsTable').html(data);
+                    //$('#PermissionId').val("");
+                //}
+            });
+        });
+    });
+</script>
+
+
+<h2>Agregar Forma De Transporte:</h2>
+
+
+
+@if (ViewBag.FlightOrBus)
+{
+
+    <div>
+        @Html.Partial("_AddFlightToTravelPackagePartialView", Model)
+
+    </div>
+}
+else
+{
+
+    <div>
+        @Html.Partial("_AddBusToTravelPackagePartialView", Model)
+    </div>
+}
+<br />
+@*<input type="button" id="AddDataServicesToTravelReturn" value="Guardar y Continuar..." />*@
+@Html.ActionLink("Guardar y Continuar", "AddDataServicesToTravelReturn", new { TravelPackageId = Model.Id_TravelPackage }) |
+@Html.ActionLink("Volver Atrás", "AddPlaces", new { travelPackageViewModel = Model })
+
+
+<div>
+    @Html.ActionLink("Volver al Menú", "Index")
+</div>

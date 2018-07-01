@@ -404,12 +404,14 @@ namespace PruebaUsers.Controllers
             Service.SetEventReservationToNewTravelPackage(travelPackage);
             if (travelPackage.FlightOrBus)
             {
-                Service.SetFlightReservationToNewTravelPackage(travelPackage);
+                Service.SetToGoFlightReservationToNewTravelPackage(travelPackage);
+                Service.SetToBackFlightReservationToNewTravelPackage(travelPackage);
 
             }
             else
             {
-                Service.SetBusReservationToNewTravelPackage(travelPackage);
+                Service.SetToGoBusReservationToNewTravelPackage(travelPackage);
+                Service.SetToBackBusReservationToNewTravelPackage(travelPackage);
             }
             return RedirectToAction("Index");
         }

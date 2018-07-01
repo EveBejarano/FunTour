@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using FunTourDataLayer.Reservation;
 
 namespace FunTourDataLayer.EventCompany
 {
@@ -8,9 +9,7 @@ namespace FunTourDataLayer.EventCompany
 
         public EventCompany()
         {
-            Even
-            this.ReservedTicket = new HashSet<ReservedTicket>();
-            this.TravelPackage = new HashSet<TravelPackage>();
+            this.Event = new HashSet<Event>();
         }
 
         [Key]

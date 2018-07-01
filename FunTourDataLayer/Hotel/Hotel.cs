@@ -5,7 +5,7 @@ using FunTourDataLayer.Reservation;
 
 namespace FunTourDataLayer.Hotel
 {
-    public class Hotel: IEntityToReload
+    public class Hotel 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hotel()
@@ -30,22 +30,6 @@ namespace FunTourDataLayer.Hotel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservedRoom> ReservedRoom { get; set; }
 
-        IEnumerable<object> IEntityToReload.DesearializeJson(string data)
-        {
-            throw new NotImplementedException();
-        }
 
-
-
-        IEnumerable<object> IEntityToReload.MappingJson(object APIResponse)
-        {
-            throw new NotImplementedException();
-        }
-        
-
-        void IEntityToReload.ReLoadTable()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

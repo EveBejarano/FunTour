@@ -5,7 +5,7 @@ namespace FunTourDataLayer.BusCompany
 {
     public partial class BusCompany
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        
         public BusCompany()
         {
             this.Bus = new HashSet<Bus>();

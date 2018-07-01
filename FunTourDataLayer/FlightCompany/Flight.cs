@@ -5,7 +5,7 @@ using FunTourDataLayer.Reservation;
 
 namespace FunTourDataLayer.FlightCompany
 {
-    public partial class Flight: IEntityToReload
+    public partial class Flight 
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Flight()
